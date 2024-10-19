@@ -23,12 +23,12 @@ jobs:
 
     - name: Stop only the Django backend container
       run: |
-        cd /home/ubuntu/martin/docker_compose_ec2
+        cd /home/ubuntu/martin/brainwave_docker_ec2
         sudo docker compose stop backend
 
     - name: Start backend container with the latest image
       run: |
-        cd /home/ubuntu/martin/docker_compose_ec2
+        cd /home/ubuntu/martin/brainwave_docker_ec2
         sudo docker compose up -d backend
 
     - name: Remove unused Docker images 
