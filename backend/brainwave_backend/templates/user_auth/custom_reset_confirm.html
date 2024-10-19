@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        font: 11px/18px Georgia, Palatino, "Times New Roman", Times, Serif;
+      }
+      p {
+        margin: 0 0 15px;
+        line-height: 1.6em;
+      }
+      h1 {
+        width: 320px;
+        line-height: 1.5em;
+        font-size: 2.7em;
+        color: #fff;
+        margin: 0 0 20px;
+        text-shadow: #892a13 1px 1px 1px;
+      }
+      h3 {
+        margin: 0 0 7px;
+        font-size: 1.3em;
+        clear: both;
+        color: #fff;
+        line-height: 1.3em;
+      }
+      #content {
+        margin: 0 auto;
+        width: 960px;
+      }
+      #header {
+        color: #fff;
+        padding: 30px 0 10px 30px;
+        background-color: #82aa00;
+      }
+      #pitch {
+        clear: left;
+        float: left;
+        width: 960px;
+        font-size: 1.2em;
+        padding: 70px 0 70px 0px;
+        background: #fff;
+        color: #82aa00;
+        text-align: center;
+      }
+      #footer {
+        clear: both;
+        border-top: 1px solid #fff;
+        color: #fff;
+        padding: 35px 20px 70px 0;
+        background-color: #82aa00;
+      }
+      #footer .right {
+        float: right;
+      }
+      .button {
+        background-color: #82aa00;
+        border-radius: 5px;
+        border: none;
+        color: #fff;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+      }
+      a:hover {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+      <div id="header">
+        <h1 style="color: white">Hello</h1>
+        <h3>
+          <b
+            >You're receiving this email because you requested a password reset
+            for your user account at {{ site_name }}.</b
+          >
+        </h3>
+      </div>
+      <div id="pitch">
+        <p>Please go to the following page and choose a new password:</p>
+        <a href="{{ frontend_url}}/{{uid}}/{{token}} " class="button"
+          >Reset your password</a
+        >
+        <br /><br /><br /><br />
+        <p>Your username, in case you've forgotten: {{ user.get_username }}</p>
+      </div>
+      <div id="footer">
+        <p class="right">
+          <i>Thanks for using our site! The {{ site_name }} team.</i>
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

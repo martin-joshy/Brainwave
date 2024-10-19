@@ -1,0 +1,98 @@
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: 'selector',
+  content: ['./src/**/*.{js,jsx,ts,tsx}'],
+  theme: {
+    container: {
+      center: true,
+      padding: {
+        DEFAULT: '1rem',
+        sm: '2rem',
+        lg: '4rem',
+        xl: '5rem',
+        '2xl': '6rem',
+      },
+    },
+    extend: {
+      backgroundImage: {
+        'background-pattern': "url('/bg-design-1@2x.png')",
+      },
+      colors: {
+        'neutral-1': '#fff',
+        black: '#000',
+        gray: {
+          100: '#fafafa',
+          200: '#848484',
+          300: 'rgba(0, 0, 0, 0.85)',
+          400: 'rgba(0, 0, 0, 0.5)',
+          500: 'rgba(0, 0, 0, 0.6)',
+        },
+        dark: {
+          100: '#121212',
+          200: '#282828',
+          300: '#3f3f3f',
+          400: '#575757',
+          500: '#717171',
+          600: '#8b8b8b',
+        },
+        'neutral-5': '#d9d9d9',
+        'character-disabled-placeholder-25': 'rgba(0, 0, 0, 0.25)',
+        darkslategray: '#474747',
+        powderblue: '#ace2e1',
+        primary: {
+          100: '#023047',
+          200: '#244459',
+          300: '#3e596c',
+          400: '#586e80',
+          500: '#738594',
+          600: '#8e9ca9',
+        },
+        'custom-gray': {
+          100: '#F4F4F4',
+        },
+      },
+      spacing: {},
+      fontFamily: {
+        'nunito-sans': "'Nunito Sans'",
+        'h5-regular': 'Roboto',
+        inter: 'Inter',
+        poppins: 'Poppins',
+      },
+      borderRadius: {
+        '6xs-8': '6.8px',
+        '11xs-5': '1.5px',
+        '5xs-6': '7.6px',
+        '20xl-4': '39.4px',
+      },
+    },
+    fontSize: {
+      'smi-1': '12.1px',
+      base: '16px',
+      '3xs-1': '9.1px',
+      'base-2': '15.2px',
+      '5xl-3': '24.3px',
+      lgi: '19px',
+      inherit: 'inherit',
+    },
+    screens: {
+      'xs-min': { min: '479px' },
+      'xs-max': { max: '479px' },
+      'sm-min': { min: '640px' },
+      'sm-max': { max: '639px' },
+      'md-min': { min: '768px' },
+      'md-max': { max: '767px' },
+      'min-870px': { min: '870px' },
+      'min-875px': { min: '875px' },
+      'lg-min': { min: '1024px' },
+      'lg-max': { max: '1023px' },
+      'xl-min': { min: '1280px' },
+      'xl-max': { max: '1279px' },
+      '2xl-min': { min: '1536px' },
+      '2xl-max': { max: '1535px' },
+    },
+  },
+  corePlugins: {
+    preflight: false,
+  },
+  // plugins: [require('@tailwindcss/forms')],
+};

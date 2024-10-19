@@ -1,0 +1,30 @@
+name: CD Pipeline
+
+on:
+  workflow_run:
+    workflows: ["CI Pipeline"]
+    types:
+      - completed
+
+jobs:
+
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+    - name: Pull all latest images
+      run: |
+        cd /home/ubuntu/brainwave-ec2
+        sudo docker compose pull
+
+    - name: Remove existing containers
+      run: |
+        sudo docker compose down || true
+
+    - name: Remove unused Docker images
+      run: |
+        sudo docker image prune -af
+
+    - name: Set up Docker Compose
+      run: |
+        sudo docker compose up -d
