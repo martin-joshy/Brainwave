@@ -12,19 +12,29 @@ jobs:
     runs-on: self-hosted
 
     steps:
-    - name: Pull all latest images
+    - name: Run docker compose 
       run: |
-        cd /home/ubuntu/brainwave-ec2
-        sudo docker compose pull
-
-    - name: Remove existing containers
+        cd /home/ubuntu/martin/brainwave_docker_ec2
+        sudo docker compose up -d
+    - name: Pull latest Django backend image
       run: |
-        sudo docker compose down || true
+        cd /home/ubuntu/martin/docker_compose_ec2
+        sudo docker compose pull backend
 
-    - name: Remove unused Docker images
+    - name: Stop only the Django backend container
+      run: |
+        cd /home/ubuntu/martin/docker_compose_ec2
+        sudo docker compose stop backend
+
+    - name: Start backend container with the latest image
+      run: |
+        cd /home/ubuntu/martin/docker_compose_ec2
+        sudo docker compose up -d backend
+
+    - name: Remove unused Docker images 
       run: |
         sudo docker image prune -af
 
-    - name: Set up Docker Compose
+    - name: Show active containers
       run: |
-        sudo docker compose up -d
+        sudo docker container ls
