@@ -1,5 +1,5 @@
 # First stage: build
-FROM python:3.12 as builder
+FROM python:3.12 AS builder
 WORKDIR /app
 
 RUN python -m venv /opt/venv
