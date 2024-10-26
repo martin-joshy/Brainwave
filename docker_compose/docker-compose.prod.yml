@@ -13,6 +13,7 @@ services:
       - postgres
 
   nginx:
+    # For setup without ssl refer https://hub.docker.com/_/nginx
     image: martinjoshy/brainwave-nginx
     volumes:
       - static:/static
