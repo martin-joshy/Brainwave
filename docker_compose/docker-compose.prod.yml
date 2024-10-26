@@ -1,0 +1,43 @@
+services:
+  backend:
+    image: martinjoshy/brainwave-backend
+    env_file:
+      - ./backend_env/.env # Update with actual path if different
+    volumes:
+      - static:/static
+      - media:/app/media
+      - /path/to/local/google_secert:/app/google_secert # Replace with your local path, refer .env.production.example for more info
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+
+  nginx:
+    image: martinjoshy/brainwave-nginx
+    volumes:
+      - static:/static
+      - media:/media
+      - /path/to/letsencrypt/live:/etc/letsencrypt/live # Replace with actual cert path
+      - /path/to/letsencrypt/archive:/etc/letsencrypt/archive # Replace with actual cert path
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - backend
+
+  postgres:
+    # https://hub.docker.com/_/postgres/
+    image: postgres:17.0-alpine3.19
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: your_postgres_password # Replace with actual password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  static:
+  media:
+  postgres_data:
