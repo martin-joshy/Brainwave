@@ -8,8 +8,7 @@
   - [Backend Setup](#backend-setup)
   - [Frontend Setup](#frontend-setup)
 - [Running the Project in Production](#running-the-project-in-production)
-- [Contributing](#contributing)
-- [License](#license)
+
 
 ## Getting Started
 Clone the repository to get started with the **Brainwave** project.
@@ -80,7 +79,7 @@ This section provides instructions for setting up the development environment fo
 To run the project in a production environment, you can use Docker with the `docker-compose.prod.yml` file provided in the `docker_compose` directory.
 
 1. **Set up Production Environment Variables:**
-   - Copy or create a `.env` file based on your development settings but with production configurations.
+   - create a `.env` file based on your production settings given in backend/brainwave_backend/env_example/.env.production.example.
 
 2. **Run Docker Compose:**
    ```bash
