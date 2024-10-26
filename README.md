@@ -1,7 +1,3 @@
-Here’s a README file that follows standard structure and provides clear instructions for both development and production setups for the "Brainwave" project:
-
----
-
 # Brainwave
 
 **Brainwave** is a full-stack application built with Django (backend) and React with Redux (frontend). This README provides setup instructions for both local development and production environments.
