@@ -79,7 +79,7 @@ This section provides instructions for setting up the development environment fo
 To run the project in a production environment, you can use Docker with the `docker-compose.prod.yml` file provided in the `docker_compose` directory.
 
 1. **Set up Production Environment Variables:**
-   - create a `.env` file based on your production settings given in backend/brainwave_backend/env_example/.env.production.example.
+   - create a `.env` file based on your production settings given in `backend/brainwave_backend/env_example/.env.production.example`.
 
 2. **Run Docker Compose:**
    ```bash
