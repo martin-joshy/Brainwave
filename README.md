@@ -87,4 +87,3 @@ To run the project in a production environment, you can use Docker with the `doc
    ```
    This command will start the backend, frontend, and database services configured for production.
 
----
