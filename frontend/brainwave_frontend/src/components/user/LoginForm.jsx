@@ -87,18 +87,18 @@ const LoginForm = () => {
           <div className=" relative w-full h-12 text-5xl-3 leading-[19px] font-medium font-poppins text-neutral-1 flex items-center justify-center min-w-[92px] ">
             Login to Brainwave
           </div>
-          <div className="p-4 w-full flex justify-center items-center">
+          <div className="py-5 w-full flex justify-center items-center">
             <GoogleSignIn setError={setError} setLoading={setLoading} />
           </div>
           <div className="w-full h-max flex flex-col">
             <FormInput name="username" type="text" placeholder="Username" />
             <FormInput name="password" type="password" placeholder="Password" />
           </div>
-          <div className="w-full flex items-center justify-center">
+          <div className="py-2 w-full flex items-center justify-center">
             {loading && <LoadingIndicator />}
           </div>
           {error && <div className="text-red-600">{error}</div>}
-          <div className="py-4 w-full flex flex-col items-center justify-center">
+          <div className="py-5 w-full flex flex-col items-center justify-center">
             <div>
               <Button
                 className="self-stretch w-[155.5px] [filter:drop-shadow(0px_3.8px_4.25px_rgba(0,_0,_0,_0.25))] z-[3]"

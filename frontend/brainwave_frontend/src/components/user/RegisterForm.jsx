@@ -118,7 +118,7 @@ const RegisterForm = () => {
           <div className=" relative w-full h-12 text-5xl-3 leading-[19px] font-medium font-poppins text-neutral-1 flex items-center justify-center min-w-[92px] ">
             Sign up
           </div>
-          <div className="p-4 w-full flex justify-center items-center">
+          <div className="py-4 w-full flex justify-center items-center">
             <GoogleSignIn setError={setError} setLoading={setLoading} />
           </div>
           <div className="w-full h-max flex flex-col">
