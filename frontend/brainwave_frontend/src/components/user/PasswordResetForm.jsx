@@ -3,9 +3,7 @@ import * as Yup from 'yup';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button } from '@mui/material';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import { Box } from '@mui/material';
 import { Link } from 'react-router-dom';
-
 import { useState } from 'react';
 import LoadingIndicator from '../common/LoadingIndicator';
 import api from '../../api/Api';
@@ -58,37 +56,41 @@ const PasswordResetForm = () => {
       {({ isSubmitting }) => (
         <Form className="m-0 w-[302.2px] flex flex-col items-start justify-start">
           <ToastContainerComponent />
-          <div className="py-7 w-full flex justify-center items-center">
-            <Box
-              sx={{
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                width: 80,
-                height: 80,
-                borderRadius: '50%',
-                border: '2px solid #000',
-              }}
-            >
-              <LockOutlinedIcon sx={{ fontSize: 50 }} />
-            </Box>
+
+          <div className="relative w-full h-12 text-5xl-3 leading-[19px] font-medium font-poppins text-neutral-1 flex items-center justify-center min-w-[92px]">
+            Reset Password
           </div>
-          <div className=" w-full flex flex-col justify-center items-center pb-4 font-nunito-sans">
-            <h1 className="font-bold">Trouble logging in?</h1>
-            <div className="text-center ">
-              <p>
-                Enter your email and we will send you a link to get back into
-                your account.
+
+          <div className="py-7 w-full flex justify-center items-center">
+            <div className="w-20 h-20 rounded-full flex items-center justify-center backdrop-blur-sm bg-white/30 shadow-[0_8px_32px_0_rgba(31,182,195,0.1)]">
+              <LockOutlinedIcon
+                sx={{
+                  fontSize: 36,
+                  color: 'rgba(26, 73, 88, 0.85)',
+                }}
+              />
+            </div>
+          </div>
+
+          <div className="w-full flex flex-col justify-center items-center pb-4 font-nunito-sans">
+            <div className="text-center">
+              <p className="text-sm text-gray-600">
+                Enter your email and we will send you a link to reset your
+                password.
               </p>
             </div>
           </div>
 
-          <FormInput name="email" type="email" placeholder="Email" />
-          <div className="py-3 w-full flex justify-center items-center">
+          <div className="w-full">
+            <FormInput name="email" type="email" placeholder="Email" />
+          </div>
+
+          <div className="py-2 w-full flex items-center justify-center">
             {loading && <LoadingIndicator />}
             {error && <div className="text-red-600">{error}</div>}
           </div>
-          <div className="py-4 w-full flex flex-col items-center justify-center">
+
+          <div className="py-5 w-full flex flex-col items-center justify-center">
             <div>
               <Button
                 className="self-stretch w-[155.5px] [filter:drop-shadow(0px_3.8px_4.25px_rgba(0,_0,_0,_0.25))] z-[3]"
@@ -108,14 +110,22 @@ const PasswordResetForm = () => {
                   width: 155.5,
                 }}
               >
-                {isSubmitting ? 'Loading...' : 'Send Email'}
+                {isSubmitting ? 'Sending...' : 'Send Reset Link'}
               </Button>
             </div>
             <div className="pt-2">
-              <i className=" text-smi-1 font-nunito-sans ">
-                <span className="text-gray-500">Or create an account?</span>
+              <i className="text-smi-1 font-nunito-sans">
+                <span className="text-gray-500">Back to </span>
                 <span className="text-black">
-                  <Link to="/register"> Sign Up</Link>
+                  <Link to="/login">Login</Link>
+                </span>
+              </i>
+            </div>
+            <div>
+              <i className="text-smi-1 font-nunito-sans">
+                <span className="text-gray-500">Don't have an account? </span>
+                <span className="text-black">
+                  <Link to="/register">Sign Up</Link>
                 </span>
               </i>
             </div>
